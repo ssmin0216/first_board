@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN" "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+
+<mapper namespace="boardNamespace">
+
+	<select id="boardList" resultType="com.test.vo.BoardVO">
+		SELECT
+			 BOARD_IDX			AS idx
+			,BOARD_TITLE		AS title
+			,BOARD_CONTENT		AS content
+			,BOARD_WRITER		AS writer
+			,DATE_FORMAT(BOARD_REG_DT, '%Y-%m-%d %H:%i:%s')		AS regStr
+			,BOARD_VIEW_CNT		AS viewCnt
+		FROM board_tb
+	</select>
+	
+</mapper> 
